@@ -15,14 +15,14 @@ main proc
     
     ; Newline for reverse loop
     mov ah, 02h
-    mov dl, 0Dh            
+    mov dl, 10            
     int 21h
-    mov dl, 0Ah            ; Line feed
+    mov dl, 13            ; Line feed
     int 21h
 
     ; Reverse the string using stack
     lea si, msg            
-    mov cx, 9             
+    mov cx, 11             
 reverse_loop:
     mov al, [si]           ; Load character from the current position in SI
     push ax                ; Push onto stack
